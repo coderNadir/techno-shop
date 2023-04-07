@@ -1,36 +1,29 @@
 import './categories.styles.scss';
-import CategoriesMenu from './components/categories-menu/categories-menu.component';
+import { Routes, Route } from 'react-router-dom';
+import Home from './routes/home/home.component';
+import Navigation from './routes/navigation/navigation.component';
+import SignIn from './routes/sign-in/sign-in.component';
+
+const Footer = () => {
+	return <h1>This is my great Footer</h1>;
+};
+
+const Shop = () => {
+	return <h1>SHOP page</h1>;
+};
 
 const App = () => {
-	const categories = [
-		{
-			id: 1,
-			title: 'laptops',
-			imageURL: 'https://i.ibb.co/2SNC3JM/laptops.png',
-		},
-		{
-			id: 2,
-			title: 'montiors',
-			imageURL: 'https://i.ibb.co/yYjMJBQ/monitors.png',
-		},
-		{
-			id: 3,
-			title: 'keyboards',
-			imageURL: 'https://i.ibb.co/YfNbcJP/keyboards.png',
-		},
-		{
-			id: 4,
-			title: 'desks',
-			imageURL: 'https://i.ibb.co/GFX5hBJ/desks.png',
-		},
-		{
-			id: 5,
-			title: 'accessories',
-			imageURL: 'https://i.ibb.co/KFtV8vZ/accessories.png',
-		},
-	];
+	return (
+		<Routes>
+			<Route path="/" element={<Navigation />}>
+				<Route index element={<Home />} />
+				<Route path="shop" element={<Shop />} />
+				<Route path="sign-in" element={<SignIn />} />
 
-	return <CategoriesMenu categories={categories} />;
+				{/* <Route index element={<Footer />} /> */}
+			</Route>
+		</Routes>
+	);
 };
 
 export default App;
