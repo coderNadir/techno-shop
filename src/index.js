@@ -9,18 +9,21 @@ import './index.scss';
 import { UserProvider } from './components/contexts/UserContext';
 import { ProductProvider } from './components/contexts/ProductContext';
 import { CartProvider } from './components/contexts/CartContext';
+import { CategoryProvider } from './components/contexts/CategoryContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
 	<React.StrictMode>
 		<BrowserRouter>
-			<UserProvider>
-				<ProductProvider>
-					<CartProvider>
-						<App />
-					</CartProvider>
-				</ProductProvider>
-			</UserProvider>
+			<CategoryProvider>
+				<UserProvider>
+					<ProductProvider>
+						<CartProvider>
+							<App />
+						</CartProvider>
+					</ProductProvider>
+				</UserProvider>
+			</CategoryProvider>
 		</BrowserRouter>
 	</React.StrictMode>
 );

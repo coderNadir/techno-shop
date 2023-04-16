@@ -4,7 +4,7 @@ import Button from '../button/button.component';
 
 import './sign-in-styles.scss';
 import { UserContext } from '../contexts/UserContext';
-import { signIn } from '../../utils/db/database.utils';
+import { signIn } from '../../utils/db/db-auth.utils';
 
 const SignInForm = () => {
 	const defaultFormMessage = {

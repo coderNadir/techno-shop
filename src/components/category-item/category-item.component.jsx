@@ -1,7 +1,7 @@
 import './category-item.styles.scss';
 
 const CategoryItem = ({ category }) => {
-	const { imageURL, title } = category;
+	const { imageURL, name } = category;
 
 	return (
 		<div className="category-container">
@@ -12,7 +12,7 @@ const CategoryItem = ({ category }) => {
 				}}
 			/>
 			<div className="category-body-container">
-				<h2>{title}</h2>
+				<h2>{name}</h2>
 				<p>shop now</p>
 			</div>
 		</div>
